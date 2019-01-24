@@ -107,42 +107,7 @@ namespace dnSpy.Contracts.Decompiler {
 				return true;
 			if (c <= 0x20)
 				return c == ' ' && allowSpaces;
-
-			switch (char.GetUnicodeCategory(c)) {
-			case UnicodeCategory.UppercaseLetter:
-			case UnicodeCategory.LowercaseLetter:
-			case UnicodeCategory.OtherLetter:
-			case UnicodeCategory.DecimalDigitNumber:
-				return true;
-
-			case UnicodeCategory.TitlecaseLetter:
-			case UnicodeCategory.ModifierLetter:
-			case UnicodeCategory.NonSpacingMark:
-			case UnicodeCategory.SpacingCombiningMark:
-			case UnicodeCategory.EnclosingMark:
-			case UnicodeCategory.LetterNumber:
-			case UnicodeCategory.OtherNumber:
-			case UnicodeCategory.SpaceSeparator:
-			case UnicodeCategory.LineSeparator:
-			case UnicodeCategory.ParagraphSeparator:
-			case UnicodeCategory.Control:
-			case UnicodeCategory.Format:
-			case UnicodeCategory.Surrogate:
-			case UnicodeCategory.PrivateUse:
-			case UnicodeCategory.ConnectorPunctuation:
-			case UnicodeCategory.DashPunctuation:
-			case UnicodeCategory.OpenPunctuation:
-			case UnicodeCategory.ClosePunctuation:
-			case UnicodeCategory.InitialQuotePunctuation:
-			case UnicodeCategory.FinalQuotePunctuation:
-			case UnicodeCategory.OtherPunctuation:
-			case UnicodeCategory.MathSymbol:
-			case UnicodeCategory.CurrencySymbol:
-			case UnicodeCategory.ModifierSymbol:
-			case UnicodeCategory.OtherSymbol:
-			case UnicodeCategory.OtherNotAssigned:
-			default:
-				return false;
+			return c >= 19968 && c <= 40869;
 			}
 		}
 	}
