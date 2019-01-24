@@ -108,7 +108,6 @@ namespace dnSpy.Contracts.Decompiler {
 			if (c <= 0x20)
 				return c == ' ' && allowSpaces;
 			return c >= 19968 && c <= 40869;
-			}
 		}
 	}
 }
